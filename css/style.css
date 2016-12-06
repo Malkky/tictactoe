@@ -57,6 +57,15 @@ h1{
 	color: red !important;
 }
 
+p{
+	color:  #fff;
+}
+
+#score{
+	display:  flex;
+	justify-content: center;
+}
+
 footer{
 	display: block;
 	text-align: center;

@@ -21,11 +21,12 @@ $(document).ready(function(){
 		   spot1.hasClass('o') && spot5.hasClass('o') && spot9.hasClass('o') ||
 		   spot3.hasClass('o') && spot5.hasClass('o') && spot7.hasClass('o') 
 			){
-			alert('Winner is O');
+			$( '#score' ).append( "<p>Winner is O</p>" );
 			$('#board li').text('+');
 			$('#board li').removeClass('disable');
 			$('#board li').removeClass('o');
 			$('#board li').removeClass('x');
+			$( '#score' ).empty();
 		} else if(spot1.hasClass('x') && spot2.hasClass('x') && spot3.hasClass('x') ||
 		   spot4.hasClass('x') && spot5.hasClass('x') && spot6.hasClass('x') ||
 		   spot7.hasClass('x') && spot8.hasClass('x') && spot9.hasClass('x') ||
@@ -34,17 +35,19 @@ $(document).ready(function(){
 		   spot1.hasClass('x') && spot5.hasClass('x') && spot9.hasClass('x') ||
 		   spot3.hasClass('x') && spot5.hasClass('x') && spot7.hasClass('x') 
 			){
-			alert('Winner is X');
+			$( '#score' ).append( "<p>Winner is X</p>" );
 			$('#board li').text('+');
 			$('#board li').removeClass('disable');
 			$('#board li').removeClass('o');
 			$('#board li').removeClass('x');
+			$( '#score' ).empty();
 		} else if(turns == 9){
-			alert('Tie Game');
+			$( '#score' ).append( "<p>Tie Game</p>" );
 			$('#board li').text('+');
 			$('#board li').removeClass('disable');
 			$('#board li').removeClass('o');
 			$('#board li').removeClass('x');
+			$( '#score' ).empty();
 			turns = 0;
 		} else if($(this).hasClass('disable')){
 			alert('This spot is already filled');
@@ -60,7 +63,7 @@ $(document).ready(function(){
 		   spot1.hasClass('o') && spot5.hasClass('o') && spot9.hasClass('o') ||
 		   spot3.hasClass('o') && spot5.hasClass('o') && spot7.hasClass('o') 
 			){
-				alert('Winner: O');
+				$( "#score" ).append( "<p>Winner is O</p>" );
 				turns = 0;
 			}
 			} else {
@@ -75,7 +78,7 @@ $(document).ready(function(){
 		   spot1.hasClass('x') && spot5.hasClass('x') && spot9.hasClass('x') ||
 		   spot3.hasClass('x') && spot5.hasClass('x') && spot7.hasClass('x') 
 			){
-				alert('Winner: X');
+				$( "#score" ).append( "<p>Winner is X</p>" );
 				turns = 0;
 			}
 		}
@@ -87,6 +90,7 @@ $(document).ready(function(){
 			$('#board li').removeClass('disable');
 			$('#board li').removeClass('o');
 			$('#board li').removeClass('x');
+			$( '#score' ).empty();
 			turns = 0;
 		});
 });
